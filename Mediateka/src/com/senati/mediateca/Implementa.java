@@ -6,7 +6,7 @@ import java.util.HashSet; //Java colecciones para arrays con seguridad
 public class Implementa {
 	public static void main(String[] args) {
 		//TODO Auto-generated method stub
-		//AÒadir nuevos socios
+		//A√±adir nuevos socios
 		//Clase objeto = new Clase()
 		Socio socio1 = new Socio();
 		socio1.id=100;
@@ -31,14 +31,14 @@ public class Implementa {
 		System.out.println(libro1.toString());
 		System.out.println(libro2.toString());
 		
-		Cintaaudio audio1 = new Cintaaudio(15,"El Milagro Verde","Los Mirlos", 9.50f, "San MartÌn", 7.02f);
+		Cintaaudio audio1 = new Cintaaudio(15,"El Milagro Verde","Los Mirlos", 9.50f, "San Mart√≠n", 7.02f);
 		Cintaaudio audio2 = new Cintaaudio(17,"Heavy & Groovie","VH Glenny Power Trio",7.99f,"Lima", 3.59f);
 		
 		System.out.println(audio1.toString());
 		System.out.println(audio2.toString());
 		
 		Cintavideo video1 = new Cintavideo(19,"Bastardos sin Gloria","Quentin Tarantino",19.99f,"Christoph Waltz, Eli Roth, Brad Pitt, Diane Kruger, Melanie Laurent",2.33f);
-		Cintavideo video2 = new Cintavideo(21,"Medianoche en ParÌs","Woody Allen",17.85f,"Owen Wilson, Rachel Adams, Marion Cotillard, Tom Hiddleston", 1.44f);
+		Cintavideo video2 = new Cintavideo(21,"Medianoche en Par√≠s","Woody Allen",17.85f,"Owen Wilson, Rachel Adams, Marion Cotillard, Tom Hiddleston", 1.44f);
 		
 		System.out.println(video1.toString());
 		System.out.println(video2.toString());
@@ -66,7 +66,7 @@ public class Implementa {
 		Libro lib2 = new Libro(12,"El Principito","Antoine Saint-Exupery",75f,96,134);
 		Libro lib3 = new Libro(13,"La Isla del Tesoro","Robert Louis Stevenson",60f,283,145);
 		Libro lib4 = new Libro(14,"Tradiciones Peruanas","Ricardo Palma",28f,296,156);
-		Libro lib5 = new Libro(15,"Rayuela","Julio Cort·zar",48f,736,178);
+		Libro lib5 = new Libro(15,"Rayuela","Julio Cort√°zar",48f,736,178);
 		
 		Set <Libro> librosinventario = new HashSet<Libro>();
 		librosinventario.add(lib1);
@@ -80,7 +80,7 @@ public class Implementa {
 		}
 		
 		System.out.println("Lista de Audios");
-		Cintaaudio aud1 = new Cintaaudio(16,"El Milagro Verde","Los Mirlos", 9.50f, "San MartÌn", 7.02f);
+		Cintaaudio aud1 = new Cintaaudio(16,"El Milagro Verde","Los Mirlos", 9.50f, "San Mart√≠n", 7.02f);
 		Cintaaudio aud2 = new Cintaaudio(17,"Heavy & Groovie","VH Glenny Power Trio",7.99f,"Lima", 3.59f);
 		Cintaaudio aud3 = new Cintaaudio(18,"Master of Puppets","Metallica",5.99f,"San Francisco",6.25f);
 		Cintaaudio aud4 = new Cintaaudio(19,"My Generation","The Who",7.55f,"Londres",3.19f);
@@ -99,7 +99,7 @@ public class Implementa {
 		
 		System.out.println("Lista de Videos");
 		Cintavideo vid1 = new Cintavideo(21,"Bastardos sin Gloria","Quentin Tarantino",19.99f,"Christoph Waltz, Eli Roth, Brad Pitt, Diane Kruger, Melanie Laurent",2.33f);
-		Cintavideo vid2 = new Cintavideo(22,"Medianoche en ParÌs","Woody Allen",17.85f,"Owen Wilson, Rachel Adams, Marion Cotillard, Tom Hiddleston", 1.44f);
+		Cintavideo vid2 = new Cintavideo(22,"Medianoche en Par√≠s","Woody Allen",17.85f,"Owen Wilson, Rachel Adams, Marion Cotillard, Tom Hiddleston", 1.44f);
 		Cintavideo vid3 = new Cintavideo(23,"School of Rock","Richard Linklater",15.75f,"Jack Black, Joan Cusack, Mike White, Miranda Cosgrove", 1.49f);
 		Cintavideo vid4 = new Cintavideo(24,"Dodgeball","Rawson Marshall", 13.84f,"Vince Vaughn, Ben Stiller, Christine Taylor, Jason Bateman, Rip Torn",1.32f);
 		Cintavideo vid5 = new Cintavideo(25,"Oblivion","Joseph Kosinski",19.25f,"Tom Cruise, Olga Kurylenko, Andrea Riseborough, Morgan Freeman, Melissa Leo, Nikolaj Coster-Waldau",2.05f);
@@ -114,5 +114,20 @@ public class Implementa {
 		for (Cintavideo video : videosinventario) {
 			System.out.println(video.id + " " + video.titulo + " " + video.autor + " " + video.precio + " " + video.actores + " " + video.duracion + " ");
 		}
+		Set <Libro> librosprestados = new HashSet<Libro>();
+		librosprestados.add(lib1);
+		librosprestados.add(lib2);
+		librosprestados.add(lib3);
+		librosprestados.add(lib4);
+		
+		byte contador =0;
+		float preciototal=0f;
+		for (Libro libro : librosprestados){
+			System.out.println(libro.id+ " " + libro.titulo + " " + libro.autor + " " + libro.precio);
+			contador++;
+			preciototal = preciototal + libro.precio;
+		}
+		System.out.println("Libros prestados " + contador);
+		System.out.println("Monto acumulado " + preciototal);
 }
 }
